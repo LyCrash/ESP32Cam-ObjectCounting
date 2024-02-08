@@ -20,7 +20,7 @@ This project aims to create a real-time object counting application using an ESP
 
     - ESP32-CAM module (AI Thinker model) with appropriate connections, I suggest you to test the camera using `test_live_cam.py`
     - Python environment installed on the server (run `pip install -r requirements.txt`)
-    - Download the YOLOv3-320 weights and cfg files from darknet [website](https://pjreddie.com/darknet/yolo/).
+    - Download the YOLOv3-320 weights files from darknet [website](https://pjreddie.com/darknet/yolo/).
 
 ## Setup:
 
