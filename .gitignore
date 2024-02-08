@@ -1,6 +1,5 @@
 # YOLOv3-320 weights (big file)
 /yolov3.weights
-/yolov3.cfg
 
 # Virtual Environment
 venv/
