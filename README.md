@@ -25,7 +25,8 @@ This project aims to create a real-time object counting application using an ESP
 ## Setup:
 
     - Configure ESP32-CAM code with appropriate Wi-Fi credentials in the file `capture-esp32cam.ino`
-    - Upload the ESP32-CAM code on the module using Arduino IDE. 
+    - Upload the ESP32-CAM code on the module using Arduino IDE.
+    - Grap the ip address printed and update the url variabe in the server code. 
     - Ensure the server has all requirements installed.
     - Run the server code to start object detection/counting.
 
