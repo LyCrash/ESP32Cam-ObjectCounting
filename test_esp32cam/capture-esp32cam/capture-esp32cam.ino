@@ -3,8 +3,8 @@
 #include <esp32cam.h>
 #define CAMERA_MODEL_AI_THINKER // Has PSRAM.
 
-const char* WIFI_SSID = "OPPO A93";
-const char* WIFI_PASS = "lili2002";
+const char* WIFI_SSID = "LYDIA YOUNESS";
+const char* WIFI_PASS = "Lili2002";
  
 WebServer server(80);
  
