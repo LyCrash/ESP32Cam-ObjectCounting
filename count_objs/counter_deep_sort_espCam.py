@@ -19,8 +19,13 @@ tracking = wf.add_task(name="infer_deepsort", auto_connect=True)
 
 tracking.set_parameters({
     "categories": "car, truck, bus",
-    "conf_thres": "0.5",
+    "conf_thres": "0.2",
 })
+
+# Initialize counts for each category
+car_count = 0
+truck_count = 0
+bus_count = 0
 
 while True:
     # Fetch image from ESP32-CAM via HTTP request
@@ -44,6 +49,24 @@ while True:
         # Convert the result to BGR color space for displaying
         img_out = image_out.get_image_with_graphics(obj_detect_out)
         img_res = cv2.cvtColor(img_out, cv2.COLOR_RGB2BGR)
+
+        # Get detected objects
+        detected_objects = obj_detect_out.get_objects()
+
+        # Loop through detected objects and update counts
+        for obj in detected_objects:
+            label = obj.label
+            if label == "car":
+                car_count = max(car_count, obj.id)
+            elif label == "truck":
+                truck_count = max(truck_count, obj.id)
+            elif label == "bus":
+                bus_count = max(bus_count, obj.id)
+
+        # Display counts
+        counts_text = f"Car: {car_count}, Truck: {truck_count}, Bus: {bus_count}"
+        cv2.putText(img_res, counts_text, (10, 30),
+                    cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 
         # Display
         display(img_res, title="DeepSORT", viewer="opencv")
