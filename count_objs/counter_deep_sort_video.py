@@ -1,3 +1,9 @@
+'''
+Taking as input a video, it tracks objects (car, truck, bus) and identifies them using
+DeepSort algorithm = YOLO for object detection + Kalman filters for tracking.
+** This method allows to identify an object separatly from others => it won't be counted twice at the same stream
+'''
+
 from ikomia.dataprocess.workflow import Workflow
 from ikomia.utils.displayIO import display
 import cv2, os
