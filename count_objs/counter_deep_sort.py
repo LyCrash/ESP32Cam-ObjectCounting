@@ -6,8 +6,8 @@ import cv2, os
 current_dir = os.getcwd()
 
 # Replace 'your_video_path.mp4' with the actual video file path
-input_video_path = os.path.join(os.path.join(current_dir, "data"),'short_video.mp4')
-output_video_path = os.path.join(os.path.join(current_dir, "data"), 'deepsort_output_video.avi')
+input_video_path = os.path.join(os.path.join(current_dir, "data"),'Road_traffic.mp4')
+output_video_path = os.path.join(os.path.join(current_dir, "data"), 'deepsort_output_Road_traffic.avi')
 
 
 # Init your workflow
@@ -23,7 +23,7 @@ tracking = wf.add_task(name="infer_deepsort", auto_connect=True)
 
 
 tracking.set_parameters({
-    "categories": "all",
+    "categories": "car, truck, bus",
     "conf_thres": "0.5",
 })
 
