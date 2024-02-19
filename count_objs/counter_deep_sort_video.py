@@ -100,7 +100,7 @@ while True:
             detected_obj_ids["bus"].append(ident)  # keep track
             bus_count += 1 
 
-    print("obj ids: ",detected_obj_ids)
+    #print("obj ids: ",detected_obj_ids)
 
     # Flush the tracking buffer if the threshold is reached
     detected_obj_ids = { k: v[drop:] if len(v)>threshold else v for k,v in detected_obj_ids.items()}
@@ -117,7 +117,6 @@ while True:
     # Display
     display(img_res, title="DeepSORT", viewer="opencv")
     #cv2.imshow("DeepSORT", img_res)
-    print('____________ end of a frame _____________\n\n')
 
     # Press 'q' to quit the video processing
     if cv2.waitKey(1) and 0xFF == ord('q'):
