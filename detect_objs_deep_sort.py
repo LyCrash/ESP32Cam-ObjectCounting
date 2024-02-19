@@ -65,7 +65,6 @@ while True:
     # Get results
     image_out = tracking.get_output(0)
     obj_detect_out = tracking.get_output(1)
-
     # Convert the result to BGR color space for displaying
     img_out = image_out.get_image_with_graphics(obj_detect_out)
     img_res = cv2.cvtColor(img_out, cv2.COLOR_RGB2BGR)
