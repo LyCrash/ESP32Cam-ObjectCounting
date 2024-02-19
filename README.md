@@ -1,7 +1,7 @@
 # ESP32Cam-ObjectCounting
 
 ## Project description
-This project aims to create a real-time object counting application using an ESP32-CAM module to capture images and a server (PC) for object detection using the YOLOv3 algorithm with OpenCV in Python. 
+This project aims to create a real-time object counting application using an ESP32-CAM module to capture images and a server (PC) for object detection using the YOLOv3/YOLOv7 models with OpenCV and ikomia in Python. 
 - **main branch**: All objects listed in the coco.names file are detected and the total count is displayed.
 - **feature/lydia/specific-detection branch**: The detected objects include cars, trucks and buses, which are specified in the YOLO COCO dataset. Many approaches are involved as follow:
     - counter_native.py: the yolov3 model runs on each image sent from the esp32 cam and counts every object (in case of multiple images sent to simulate a video: it doesn't take into account the fact that the same object can be counted multiple times i.e none tracked object)
@@ -16,8 +16,8 @@ This project aims to create a real-time object counting application using an ESP
 
 2. Server Code
 
-    The server retrieves images from the ESP32-CAM and performs object detection on these images, specifically counting cars, trucks, bicycles, motorbikes, and buses.
-    The count is displayed in real-time on the server's graphical user interface.
+    The server retrieves images from the ESP32-CAM and performs object detection on these images, specifically cars, trucks and buses.
+    Many approaches are performed for the counting that is displayed in real-time on the server's graphical user interface.
 
 ## Requirements:
 
