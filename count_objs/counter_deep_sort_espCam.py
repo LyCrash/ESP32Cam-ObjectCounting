@@ -6,7 +6,7 @@ import numpy as np
 from io import BytesIO
 
 # Replace with the actual ESP32-CAM IP address and port
-esp32_cam_url = "http://192.168.1.36/cam-hi.jpg"
+esp32_cam_url = "http://192.168.239.93/cam-hi.jpg"
 
 # Init your workflow
 wf = Workflow()
@@ -18,7 +18,7 @@ detector = wf.add_task(name="infer_yolo_v7", auto_connect=True)
 tracking = wf.add_task(name="infer_deepsort", auto_connect=True)
 
 tracking.set_parameters({
-    "categories": "car, truck, bus",
+    "categories": "car,truck,bus",
     "conf_thres": "0.2",
 })
 

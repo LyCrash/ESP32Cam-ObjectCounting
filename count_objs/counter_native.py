@@ -7,7 +7,7 @@ import cv2
 import numpy as np
 import urllib.request
 
-url = 'http://192.168.1.42/cam-hi.jpg'
+url = 'http://192.168.239.93/cam-hi.jpg'
 
 cap = cv2.VideoCapture(url)
 whT = 320

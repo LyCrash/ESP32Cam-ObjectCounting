@@ -10,7 +10,7 @@ current_dir = os.getcwd()
 input_video_path = os.path.join(os.path.join(
     current_dir, "data"), 'Road_traffic.mp4')
 output_video_path = os.path.join(os.path.join(
-    current_dir, "data"), 'deepsort_output_Road_traffic.avi')
+    current_dir, "data"), 'deepsort_counting_Road_traffic.avi')
 
 # Init your workflow
 wf = Workflow()
@@ -22,7 +22,7 @@ detector = wf.add_task(name="infer_yolo_v7", auto_connect=True)
 tracking = wf.add_task(name="infer_deepsort", auto_connect=True)
 
 tracking.set_parameters({
-    "categories": "car, truck, bus",
+    "categories": "car,truck,bus",
     "conf_thres": "0.5",
 })
 

@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import urllib.request
 
-url = 'http://192.168.1.42/cam-hi.jpg'
+url = 'http://192.168.239.93/cam-hi.jpg'
 
 cap = cv2.VideoCapture(url)
 whT = 320
@@ -46,6 +46,7 @@ def findObject(outputs, im):
         box = bbox[i]
         x, y, w, h = box[0], box[1], box[2], box[3]
 
+        # uncomment this part to be able to detect all objects (+ remove next conditions)
         # cv2.rectangle(im, (x, y), (x+w, y+h), (255, 0, 255), 2)
         # cv2.putText(im, f'{classNames[classIds[i]].upper()} {int(confs[i]*100)}%',
         #             (x, y-10), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 0, 255), 2)
